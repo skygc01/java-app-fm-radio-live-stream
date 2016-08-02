@@ -4,7 +4,8 @@ FM Live Stream is a desktop application developed by using Java Swing + [Jlayer]
 ### Features
   - Play FM live using their streaming urls 
   - Some URLs:
-  -      http://radio.itechnepal.com/kanchanjunghafm/stream                       https://radio.itechnepal.com/kanchanjunghafm/stream
+  - http://radio.itechnepal.com/kanchanjunghafm/stream                       
+  - https://radio.itechnepal.com/kanchanjunghafm/stream
 
 ### Version
 1.0.0
