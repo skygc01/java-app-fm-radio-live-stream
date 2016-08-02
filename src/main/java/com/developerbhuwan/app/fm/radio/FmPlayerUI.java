@@ -83,7 +83,6 @@ public class FmPlayerUI extends javax.swing.JFrame {
         messageLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         messageLabel.setForeground(java.awt.Color.blue);
 
-        bufferProgressBar.setValue(0);
         bufferProgressBar.setIndeterminate(true);
         bufferProgressBar.setString("Playing....");
         bufferProgressBar.setStringPainted(true);
@@ -128,7 +127,7 @@ public class FmPlayerUI extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        jLabel1.setText("Copyright (C) 2016 DeveloperBhuwan");
+        jLabel1.setText("Copyright (C) 2016 DeveloperBhuwan || https://github.com/projects-developerbhuwan/java-app-fm-radio-live-stream");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,12 +135,13 @@ public class FmPlayerUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
