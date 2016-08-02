@@ -20,10 +20,9 @@
  */
 package com.developerbhuwan.app.fm.radio.player;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  *
@@ -38,15 +37,10 @@ public class HttpsUrlPlayerTest {
     }
     
     @Test
+    @Ignore
     public void testPlay() throws Exception {
         assertNotNull(fmPlayer);
-        new Thread(() -> {
-            try {
-                fmPlayer.play();
-            } catch (Exception ex) {
-                Logger.getLogger(HttpsUrlPlayerTest.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }).start();
+        fmPlayer.play();
     }
     
 }

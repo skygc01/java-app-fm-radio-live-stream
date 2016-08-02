@@ -24,29 +24,25 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  *
  * @author Bhuwan Prasad Upadhyay
  */
 public class HttpUrlPlayerTest {
-    
+
     private final FmPlayer fmPlayer;
-    
+
     public HttpUrlPlayerTest() {
         fmPlayer = new HttpUrlPlayer(new PlayerDTO("http://radio.itechnepal.com/kanchanjunghafm/stream"));
     }
-    
+
     @Test
+    @Ignore
     public void testPlay() throws Exception {
         assertNotNull(fmPlayer);
-        new Thread(() -> {
-            try {
-                fmPlayer.play();
-            } catch (Exception ex) {
-                Logger.getLogger(HttpsUrlPlayerTest.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }).start();
+        fmPlayer.play();
     }
-    
+
 }
