@@ -25,6 +25,10 @@ import com.developerbhuwan.app.fm.radio.player.PlayerDTO;
 import com.developerbhuwan.app.fm.radio.player.PlayerFactory;
 import com.developerbhuwan.app.fm.radio.state.Context;
 import java.awt.Color;
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -57,7 +61,7 @@ public class FmPlayerUI extends javax.swing.JFrame {
         urlTextField = new javax.swing.JTextField();
         messageLabel = new javax.swing.JLabel();
         bufferProgressBar = new javax.swing.JProgressBar();
-        jLabel1 = new javax.swing.JLabel();
+        copyrightLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FM Player");
@@ -127,7 +131,18 @@ public class FmPlayerUI extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        jLabel1.setText("Copyright (C) 2016 DeveloperBhuwan || https://github.com/projects-developerbhuwan/java-app-fm-radio-live-stream");
+        copyrightLabel.setText("Copyright (C) 2016 DeveloperBhuwan || https://github.com/projects-developerbhuwan/java-app-fm-radio-live-stream");
+        copyrightLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                copyrightLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                copyrightLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                copyrightLabelMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,7 +154,7 @@ public class FmPlayerUI extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
+                        .addComponent(copyrightLabel)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -149,7 +164,7 @@ public class FmPlayerUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
+                .addComponent(copyrightLabel)
                 .addGap(10, 10, 10))
         );
 
@@ -195,6 +210,24 @@ public class FmPlayerUI extends javax.swing.JFrame {
         resetUIChange();
     }//GEN-LAST:event_stopButtonActionPerformed
 
+    private void copyrightLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_copyrightLabelMouseEntered
+        copyrightLabel.setForeground(Color.BLUE);        
+    }//GEN-LAST:event_copyrightLabelMouseEntered
+
+    private void copyrightLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_copyrightLabelMouseExited
+        copyrightLabel.setForeground(Color.BLACK);
+    }//GEN-LAST:event_copyrightLabelMouseExited
+
+    private void copyrightLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_copyrightLabelMouseClicked
+        if(Desktop.isDesktopSupported()) {
+            try {
+                Desktop.getDesktop().browse(new URI("https://github.com/projects-developerbhuwan/java-app-fm-radio-live-stream"));
+            } catch (IOException | URISyntaxException ex) {
+                Logger.getLogger(FmPlayerUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_copyrightLabelMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -217,7 +250,7 @@ public class FmPlayerUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar bufferProgressBar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel copyrightLabel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel messageLabel;
