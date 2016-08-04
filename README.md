@@ -1,4 +1,4 @@
-# Java Application for FM Live Stream
+# Java Application for FM Live Stream [![Build Status](https://travis-ci.org/projects-developerbhuwan/java-app-fm-radio-live-stream.svg?branch=master)](https://travis-ci.org/projects-developerbhuwan/java-app-fm-radio-live-stream)
 FM Live Stream is a desktop application developed by using Java Swing + [Jlayer](http://www.javazoom.net/javalayer/javalayer.html) mp3 library.
 
 ### Features
